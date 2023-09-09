@@ -102,7 +102,7 @@ Description: "A profile for the data elements required to identify an organizati
 * contact.name 1..1 MS
 * contact.address 1..1 MS
 * contact.address only SPLAddress
-////* insert ContactPhoneNumberAndEmail
+* insert ContactPhoneNumberAndEmail
 
 
 Invariant: spl-6.1.3.7
@@ -132,7 +132,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * type 1..1 MS
 * type = OrganizationTypes#Importer
 * name 1..1 MS
-//* insert PhoneNumberAndEmail
+* insert ContactPhoneNumberAndEmail
 
 Profile: ImporterAffiliation
 Parent: OrganizationAffiliation
@@ -229,8 +229,8 @@ Description: "An example of an Establishment Organization."
 * address.country = "USA"
 */
 * contact.name.text = "Charles Smith"
-//* contact.telecom[Phone].value = "+011-703-362-1280"
-//* contact.telecom[Email].value = "charles@anywhere.com"
+* contact.telecom[Phone].value = "+011-703-362-1280"
+* contact.telecom[Email].value = "charles@anywhere.com"
 * contact.address.line = "123 IVY LANE ROAD"
 * contact.address.city = "SMITH FALLS"
 * contact.address.state = "MD"
@@ -250,8 +250,8 @@ Description: "An example of an Importer Organization."
 * identifier[DUNSNumber].value = "888888888"
 * type = OrganizationTypes#Importer
 * name = "Example Importer"
-//* telecom[Phone].value = "+1-908-999-1212;ext=444"
-//* telecom[Email].value = "jdoe_2@npoiinc.net"
+* contact.telecom[Phone].value = "+1-908-999-1212;ext=444"
+* contact.telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: ExampleImporterAffiliation
 InstanceOf: ImporterAffiliation

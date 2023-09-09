@@ -10,7 +10,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains NDCCode 1..1 MS
 * identifier[NDCCode].system = "http://hl7.org/fhir/sid/ndc"
-/*
+
 * name 1..* MS
 * name.productName 1..1 MS
 * name.type 1..1 MS
@@ -20,17 +20,17 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * name ^slicing.description = "Require specific name types"
 * name contains Proprietary 1..1 and NonProprietary 0..1
 * name[Proprietary].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[Proprietary].namePart 0..* MS
-* name[Proprietary].namePart.part 1..1 MS
-* name[Proprietary].namePart.type 1..1 MS
-* name[Proprietary].namePart ^slicing.discriminator.type = #value
-* name[Proprietary].namePart ^slicing.discriminator.path = "type"
-* name[Proprietary].namePart ^slicing.rules = #open
-* name[Proprietary].namePart ^slicing.description = "Specifically call out the Suffix name part"
-* name[Proprietary].namePart contains Suffix 0..1
-* name[Proprietary].namePart[Suffix].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SFX
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Specifically call out the Suffix name part"
+* name[Proprietary].part contains Suffix 0..1
+* name[Proprietary].part[Suffix].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SFX
 * name[NonProprietary].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-*/
+
 * crossReference 0..1 MS
 * crossReference.type 1..1 MS
 * crossReference.type = $NCI-T#C64637

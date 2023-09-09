@@ -67,11 +67,11 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * name 1..1 MS
 //* address 1..1 MS
 //* address only SPLAddress
-//* contact 1..1 MS
-//* contact.name 1..1 MS
-//* contact.address 1..1 MS
-//* contact.address only SPLAddress
-//* insert ContactPhoneNumberAndEmail
+* contact 1..1 MS
+* contact.name 1..1 MS
+* contact.address 1..1 MS
+* contact.address only SPLAddress
+* insert ContactPhoneNumberAndEmail
 
 Invariant: spl-5.1.2.8
 Description: "NDC Labeler code is 4 or 5 digits"
@@ -151,10 +151,10 @@ Description: "An example of a Labeler Organization."
 * address.state = "Telangana"
 * address.postalCode = "500002"
 * address.country = "IND"
+*/
 * contact.name.text = "Mr. John Doe_1"
 * contact.telecom[Phone].value = "+9-140-1111-2222"
-*/
-//* contact.telecom[Email].value = "jdoe_1@npoiinc.net"
+* contact.telecom[Email].value = "jdoe_1@npoiinc.net"
 * contact.address.line = "Plot 101 First Street"
 * contact.address.city = "RangareddyDistrict"
 * contact.address.state = "Telangana"
