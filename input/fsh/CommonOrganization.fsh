@@ -21,7 +21,7 @@ RuleSet: ContactPhoneNumberAndEmail
 * contact.telecom[Phone].system = #phone
 * contact.telecom[Email] only SPLContactPoint
 * contact.telecom[Email].system = #email
-
+/*
 RuleSet: PhoneNumberAndEmail
 * telecom 2..* MS
 * telecom ^slicing.discriminator.type = #value
@@ -33,7 +33,7 @@ RuleSet: PhoneNumberAndEmail
 * telecom[Phone].system = #phone
 * telecom[Email] only SPLContactPoint
 * telecom[Email].system = #email
-
+*/
 
 Profile: OrganizationBundle
 Parent: Bundle
@@ -68,8 +68,8 @@ Description: "An abstract profile that indicates what type of request is being m
 * event[x] only Coding
 * eventCoding from OrganizationSubmissionMessageTypes (required)
 * eventCoding.display 1..1 MS
-* source MS
-* source.endpoint MS
+//* source MS
+////* source.endpoint MS
 * focus 1..* MS
 * focus only Reference(Organization)
 
@@ -109,7 +109,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * type 1..1 MS
 * type = OrganizationTypes#USAgent
 * name 1..1 MS
-* insert PhoneNumberAndEmail
+//* insert PhoneNumberAndEmail
 
 Profile: USAgentAffiliation
 Parent: OrganizationAffiliation

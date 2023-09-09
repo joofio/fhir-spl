@@ -96,13 +96,14 @@ Description: "A profile for the data elements required to identify an organizati
 * type 1..1 MS
 * type = OrganizationTypes#Establishment
 * name 1..1 MS
-* address 1..1 MS
-* address only SPLAddress
+//* address 1..1 MS
+//* address only SPLAddress
 * contact 1..1 MS
 * contact.name 1..1 MS
 * contact.address 1..1 MS
 * contact.address only SPLAddress
-* insert ContactPhoneNumberAndEmail
+////* insert ContactPhoneNumberAndEmail
+
 
 Invariant: spl-6.1.3.7
 Description: "FEI number is 7 or 10 digits"
@@ -131,7 +132,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * type 1..1 MS
 * type = OrganizationTypes#Importer
 * name 1..1 MS
-* insert PhoneNumberAndEmail
+//* insert PhoneNumberAndEmail
 
 Profile: ImporterAffiliation
 Parent: OrganizationAffiliation
@@ -219,14 +220,17 @@ Description: "An example of an Establishment Organization."
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE ESTABLISHMENT INC."
 * type = OrganizationTypes#Establishment
+/*
+
 * address.line = "111 SOUTH PARK STREET"
 * address.city = "YAKIMA"
 * address.state = "WA"
 * address.postalCode = "23456"
 * address.country = "USA"
+*/
 * contact.name.text = "Charles Smith"
-* contact.telecom[Phone].value = "+011-703-362-1280"
-* contact.telecom[Email].value = "charles@anywhere.com"
+//* contact.telecom[Phone].value = "+011-703-362-1280"
+//* contact.telecom[Email].value = "charles@anywhere.com"
 * contact.address.line = "123 IVY LANE ROAD"
 * contact.address.city = "SMITH FALLS"
 * contact.address.state = "MD"
@@ -246,8 +250,8 @@ Description: "An example of an Importer Organization."
 * identifier[DUNSNumber].value = "888888888"
 * type = OrganizationTypes#Importer
 * name = "Example Importer"
-* telecom[Phone].value = "+1-908-999-1212;ext=444"
-* telecom[Email].value = "jdoe_2@npoiinc.net"
+//* telecom[Phone].value = "+1-908-999-1212;ext=444"
+//* telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: ExampleImporterAffiliation
 InstanceOf: ImporterAffiliation
@@ -259,7 +263,7 @@ Instance: SampleEstablishmentRegistrationMessage
 InstanceOf: EstablishmentRegistrationMessage
 Description: "An example of an Establishment Registration message"
 * eventCoding = http://loinc.org#51725-0  "Establishment registration"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(ExampleEstablishmentRegistrant)
 * focus[1] = Reference(ExampleEstablishment)
 
@@ -278,7 +282,7 @@ Instance: SampleEstablishmentInactivationMessage
 InstanceOf: EstablishmentInactivationMessage
 Description: "An example of a message header for a Establishment Inactivation"
 * eventCoding = FHIRSpecificSPLMessageTypes#01 "Establishment inactivation"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedEstablishmentRegistrant)
 * focus[1] = Reference(SampleIdentifiedEstablishment)
 

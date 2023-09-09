@@ -10,6 +10,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains NDCCode 1..1 MS
 * identifier[NDCCode].system = "http://hl7.org/fhir/sid/ndc"
+/*
 * name 1..* MS
 * name.productName 1..1 MS
 * name.type 1..1 MS
@@ -29,6 +30,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * name[Proprietary].namePart contains Suffix 0..1
 * name[Proprietary].namePart[Suffix].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SFX
 * name[NonProprietary].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
+*/
 * crossReference 0..1 MS
 * crossReference.type 1..1 MS
 * crossReference.type = $NCI-T#C64637
@@ -74,18 +76,18 @@ Description: "Details around the packaging of submitted medicinal products."
 * packageFor only Reference(SubmittedMedicinalProduct)
 * marketingStatus 0..1 MS
 * marketingStatus.dateRange 1..1 MS
-* package 1..1 MS
-* package.identifier MS
-* package.type 1..1 MS
-* package.quantity 0..1 MS
-* package.property 0..* MS
-* package.property.type 1..1 MS
-* package.property.value[x] 1..1 MS
-* package.containedItem 0..* MS
-* package.containedItem.item 1..1 MS
-* package.containedItem.item only CodeableReference(SubmittedManufacturedItem)
-* package.containedItem.amount 1..1 MS
-* package.package 0..* MS
+* packaging 1..1 MS
+* packaging.identifier MS
+* packaging.type 1..1 MS
+* packaging.quantity 0..1 MS
+* packaging.property 0..* MS
+* packaging.property.type 1..1 MS
+* packaging.property.value[x] 1..1 MS
+* packaging.containedItem 0..* MS
+* packaging.containedItem.item 1..1 MS
+* packaging.containedItem.item only CodeableReference(SubmittedManufacturedItem)
+* packaging.containedItem.amount 1..1 MS
+* packaging.packaging 0..* MS
 
 Profile: SubmittedManufacturedItem
 Parent: ManufacturedItemDefinition
